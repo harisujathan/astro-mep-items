@@ -1,0 +1,13 @@
+Planet     Length                 D-9          
+-----------------------------------------------
+Sun 22°18'53" Aqu Ari        
+Moo 20°12'19" Leo Lib        
+Mar 11°17'16" Cap Ari        
+Mer 10°22'06" Pis Lib        
+Jup 20°26'40" Sag Lib        
+Ven 05°05'31" Ari Tau       
+Sat 24°46'05" Sco Aqu     
+Rah 26°42'45" Aqu Gem       
+Ket 26°42'45" Leo Sag  
+Asc 27°56'13" Leo Sag  
+
