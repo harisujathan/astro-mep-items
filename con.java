@@ -19,9 +19,10 @@ class con{
    //for(int i=0;i<12;i++) nxd[i]=new HashMap<String,Integer>();
    public static String[] hs=new String[]{"Ari","Tau","Gem","Can","Leo","Vir","Lib","Sco","Sag","Cap","Aqu","Pis"};
    public static final int Nmer=18;
-   public static final int Nven=24;
+   public static final int Nven=20;
    public static final int Nmar=36;
    public static final int Njup=45; 
-   public static final int Nrah=60; 
+   public static final int Nrah=60;	 
+   public static final int Nket=60; 
    public static final int Nsat=72;
 }

@@ -532,7 +532,7 @@ public class NewJDialog extends javax.swing.JDialog {
             BufferedReader br1 = new BufferedReader(new InputStreamReader(new FileInputStream("Meps"+fileSuff)));
             String line = "", str = "";
             while ((line = br1.readLine()) != null) {
-                if (line.contains(",") || line.contains("Nmoo") || line.contains("Nmer") || line.contains("Nmar") || line.contains("Nven") || line.contains("Njup")|| line.contains("Nrah")  || line.contains("Nsat")) {
+                if (line.contains(",") || line.contains("Nmoo") || line.contains("Nmer") || line.contains("Nmar") || line.contains("Nven") || line.contains("Njup")|| line.contains("Nrah")  || line.contains("Nsat")|| line.contains("Nket")) {
                     if ((line.contains(s1)) && (line.contains(s2)) && (line.contains(s3) && t(line))) {
                         str += line + "\n";
                     }
@@ -557,7 +557,7 @@ public class NewJDialog extends javax.swing.JDialog {
                 if(pre.equals("Rah"))
                    pre="rah";
                 if(pre.equals("Ket"))
-                   pre="rah";
+                   pre="ket";
                 if(pre.equals("Sun"))
                     pre=",";
                 else
@@ -636,7 +636,7 @@ public class NewJDialog extends javax.swing.JDialog {
             BufferedReader br1 = new BufferedReader(new InputStreamReader(new FileInputStream("Meps"+fileSuff)));
             String line = "", str = "";
             while ((line = br1.readLine()) != null) {
-                if (line.contains(",") || line.contains("Nmoo") || line.contains("Nmer") || line.contains("Nmar") || line.contains("Nven") || line.contains("Njup") || line.contains("Nrah")   || line.contains("Nsat")) {
+                if (line.contains(",") || line.contains("Nmoo") || line.contains("Nmer") || line.contains("Nmar") || line.contains("Nven") || line.contains("Njup") || line.contains("Nrah")   || line.contains("Nsat")|| line.contains("Nket")) {
                     if ((line.contains(s1)) && (line.contains(s2)) && (line.contains(s3))&& t(line)) {
                         str += line + "\n";
                     }

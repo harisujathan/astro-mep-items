@@ -155,13 +155,13 @@ public class vd{
            dasa.main(new String[]{i+"",j+"",k+"",born,mul,lev,""+MergeVD.truncate});
         }
         if(pla.startsWith("Ket")){ 
-           pr(pw1,con.Nrah);
+           pr(pw1,con.Nket);
            //pr(pw1,65.45454545);
-           MergeVD.ketItem="rah";
+           MergeVD.ketItem="ket";
            ///MergeVDTxt.ketItem="rah";
-           pw1.println("\njava dasa2 "+i+" "+j+" "+k+" "+born+" "+mul+" "+lev+" "+con.Nrah+" 0 "+MergeVD.truncate);
+           pw1.println("\njava dasa2 "+i+" "+j+" "+k+" "+born+" "+mul+" "+lev+" "+con.Nket+" 0 "+MergeVD.truncate);
            pw1.println("\n\n  KET VD (RATIO)\n--------------"); 
-           dasa2.main(new String[]{i+"",j+"",k+"",born,mul,lev,""+con.Nrah,"0",""+MergeVD.truncate});
+           dasa2.main(new String[]{i+"",j+"",k+"",born,mul,lev,""+con.Nket,"0",""+MergeVD.truncate});
            pr(pw2,13.3333333);
            pw2.println("\njava dasa "+i+" "+j+" "+k+" "+born+" "+mul+" "+lev+" "+MergeVD.truncate);
            pw2.println("\n\n  KET VD (MOON)\n--------------"); 

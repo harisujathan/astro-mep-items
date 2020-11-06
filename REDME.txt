@@ -13,17 +13,52 @@ Ket 22°08′03″ Leo  Lib
 Asc 06°35′14″ Ari  Tau 
 
 2. a) run . ./a linus.txt>b ("b" file is picked up by next program).
-b) run java nav4 [mep-degree-fraction] [mep-item-planet-degree] [mep-item-planet-minute] [[planet-filter] [display-header] [all-or-noAll-switch]]
+b) run java nav4 [mep-degree-fraction] [mep-item-planet-degree] [mep-item-planet-minute] [planet-filter] [display-header] [more-mappings] [all-or-noAll-switch] 
 eg: java nav4 0.8 13 20 0 t all - will display all MEP items (moon 13 20 is ignored)
 java nav4 0.5 24 0 - will display all venus MEP items with header.
 java nav4 0.8 18 0 Jup - will display all mercury MEP items with Jup filter with header
 java nav4 0.5 36 0 Sun 0 - will display mars MEP items with header omitted
 java nav4 0.8 45 0 ah - Jupiter items with rahu filter (here "ah" is used for "rahu" due to some export error)
 java nav4 0.9 72 0 Moo - saturn mep items with moon filter.
+java nav4 0.8 13 20 0 t m all  - 6th parameter will display d1-d9,d1-d99,d9-d99 mappings also(not just same chart mappings).
 
+mep-degree-fraction : any fraction, mep-item-planet-degree: 13/18/24/36/45/72 , mep-item-planet-minute 20(for 13 of prev)/0, planet-filter : 0/Sat/Mar/Jup/Sun/Moo/Mer/Ven/ah/Ket , display-header: t/[any], more-mappings: m/[any], all-or-noAll-switch : all/[any]
 
 3. CODE IS TRIAL STAGE, MANY CODE HAS TO BE REMOVED. THERE IS TRIAL HOUSE ADDED FOR EACH ROW FOR 13-20 MEP ITEM FOR NOT ALL. PLEASE ADD MORE FOR ALL IF NEEDED TO GREP A LOT. copyright Hari Sujathan 2018-2020.
 
 4. Idea of MEP items was conceived in 2018. nakshatra MEP item was first breakthough, followed by trials by extending concept for all 9 planets. D99 CONCEPT WAS FOUND IN 2020 MAY AND IS HIGHLY VALID( IF NAVAMSA IS SOUL, WHY NOT PARAMATMA BE NAVAMSA'S NAVAMSA). USE SARAVALI VOL1 AND VOL2 ALONG WITH THIS TO VALIDATE ALL MEP ITEMS TO UNDERSTAND PLANETARY FORCES SPLITUP WORKING IN YOUR LIFE.
 
+5. SUN IS BIGGEST PLANET AND HAS MORE WEIGHTAGE FOR ITS MEP ITEMS. 
 
+6. bug fixes : d1-d9, d1-d99,d9-d99 looping should not remove duplicate unlike d1-d1,d9-d9,d99-d99. sandhi condition considered.
+7. printed number correction. 
+8. d4 chart added.
+9. grep friendly : java nav4 0.5 13 20 0 t m all grep |grep Jup |grep ' d99' |grep ' Jup'. 8th parameter if omitted will not display details in each row for grep purpose.
+10. bug fixes(wrong numbers).
+11. bug fix d9 deg was wrong.
+12 d10 chart added. use 8th argument "d10" to display. java nav4 0.5 13 20 0 t m all grep d10 .
+13 jupiter MEP item changed from 45* to 40*.
+14 D99 may be invalid chart. USE JUPITER VIMSHOTTARI DASA,MARS VIMSHOTTARI DASA ETC CONCEPT. 
+15 9 parameters required. d10 and d99 made optional. "java nav4 0.5 13 20 0 t m all grep d10 d99" 
+16 decimal points rounded to 2 digit, houses displayed in each row, ">2" for easy grepping of 2nd house relation, BAD added for 6/8/12 .
+17 dasa can be seen in recursion with multiplication factor. java dasa [full-deg] [min] [sec] yyyy-MM-dd [multiply-factor] [level-depth]
+18. ratings added as part of grep with "!" suffix.
+19 dasa2 added is same as dasa except custom ratio is taken for remainder of starting dasa other than 13.333. java dasa [full-deg] [min] [sec] yyyy-MM-dd [multiply-factor] [level-depth] [ratio-deg] [ratio-min]. 
+   eg:  java dasa2 322 18 53 1486-2-27 1 2 30 0 (sun VD pass 30 0, moon VD pass 13 20, jupiter VD pass 45 0 etc)
+20 Vimshottari Dasa added to generate output file "dasas.txt",dasas.html. usage: java vd [born-yyyy-MM-dd] [multiply-factor] [level] [[mep-degree] [truncate-lines]]. 
+   eg: java vd 1816-5-17 1 1 0.7 1000.
+   eg: java vd 1816-5-17 1.01 1 0.7 1000.
+   output can be seen in "dasas.tml" file for easier understanding on working of 9 vimshottari dasas. as of now RATIO is more correct than moon degree based VD. VARIOUS MEPS ACTIVE FOR EACH DASA OF EACH OF THE 9 VIMSHOTTARI DASAS CAN BE SEEN MERGED.
+21 java filter [start-year] [end-year] filter the dasas.html to dasasFilter.html.
+22 PROCESS SIMPLIFIED TO JUST TWO STEPS: export to txt file, run ". ./a horo.txt>b" , java vd 1816-5-17 1 1 0.7. OUTPUT OF "java nav4" will be in "Meps" file.
+23 bug fix(condition check).
+24 MEP ITEM BASED HOUSE DISPLAYED WITH :> ,-> PREFIXES. Mer Items have different houses than rashi houses.
+25 java NewJDialog to display popup window containing dasa tree, Mep items, search field displayed in groups of three trees. prerequisite: "java vd [dob] [mul] [level]" must be run before running this program.
+usage : java NewJDialog [dasa-file-R-or-M] [true-false-strict] (default is strict)
+java NewJDialog DasasR f
+java NewJDialog DasasR t
+java NewJDialog DasasM t
+26 bug fix rah-ketu MEP of different charts displayed, not same chart.
+27 all 9 VDs in single screen UI change for 1920x1080.
+28 although main nakshatra lord text field is main source, INDIVIDUAL ROW NAKSHATRA LORD ADDED in bracketed text.
+29 MER=18,VEN=20,MAR=36,JUP=60,RAH/KET=72,SAT=90 MEP item degrees. 
