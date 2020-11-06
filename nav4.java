@@ -10,6 +10,7 @@ class nav4{
    static boolean d4=false;
    static boolean strict=true; 
    static String skip=""; 
+   static String nakdesc=""; 
    static boolean all=false; 
    static PrintStream pwr=System.out;
   public static void main(String args[]) throws Exception{
@@ -27,49 +28,66 @@ class nav4{
      pwr.println("=== 13 20  ====");
      args[1]="13";
      args[2]="20";
+     nakdesc="Nmoo";
      mains(args);
      clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      FIRST=false;
      pwr.println("=== 18 0  ====");
      args[1]=""+con.Nmer;
      args[2]="0";
+     nakdesc="Nmer";
      mains(args);
      clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      pwr.println("=== 24 0  ====");
      args[1]=""+con.Nven;
      args[2]="0";
+      nakdesc="Nven";
      mains(args);
      con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      pwr.println("=== 36 0  ====");
      args[1]=""+con.Nmar;
      args[2]="0";
+      nakdesc="Nmar";
      mains(args);
      clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      pwr.println("=== 60 0  ====");
      args[1]=""+con.Njup;
      args[2]="0";
+     nakdesc="Njup";
+     mains(args);
+     clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
+     pwr.println("=== 45 0  ====");
+     args[1]=""+con.Nket;
+     args[2]="0";
+     nakdesc="Nket";
      mains(args);
      clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      pwr.println("=== 45 0  ====");
      args[1]=""+con.Nrah;
      args[2]="0";
+     nakdesc="Nrah";
      mains(args);
      clearMaps();//con.md=new HashMap<String,Integer>();con.mn=new HashMap<String,Integer>();con.nd=new HashMap<String,Integer>();con.nn=new HashMap<String,Integer>();
      pwr.println("=== 72 0  ====");
      args[1]=""+con.Nsat;
      args[2]="0";
+     nakdesc="Nsat";
      mains(args);
     }else mains(args);
 
    pwr.println(((float)GoodBad.global_rating/GoodBad.global_count)+".");
   }
-   static String nakdesc="N";
+   //static String nakdesc="N";
   public static void mains(String args[]) throws Exception{
    float diff=Float.parseFloat(args[0]);
    String nak1=args[1];
    String nak2=args[2];
-   nakdesc="N"+args[1]+"."+args[2];
-    switch(Integer.parseInt(nak1)){ case 13: nakdesc="Nmoo";break; case con.Nmer: nakdesc="Nmer";break; case con.Nven: nakdesc="Nven";break; case con.Nmar:  nakdesc="Nmar";break; case con.Njup:  nakdesc="Njup";break; case con.Nrah:  nakdesc="Nrah"; break; case con.Nsat:  nakdesc="Nsat";};
+   //nakdesc="N"+args[1]+"."+args[2];
+    /*switch(Integer.parseInt(nak1)){ case 13: nakdesc="Nmoo";break; case con.Nmer: nakdesc="Nmer";break; case con.Nven: nakdesc="Nven";break; case con.Nmar:  nakdesc="Nmar";break; case con.Njup:  nakdesc="Njup";break;  case con.Nsat:  nakdesc="Nsat";};
+   if(nak1==con.Nket)
+     nakdesc="Nket";
+   if(nak1==con.Nrah)
+     nakdesc="Nrah";*/
    String pla=""; 
    //if(args.length>3 && !args[3].equals("0") )if( args[3].length() >2) pla=args[3]; else strict=true;
    if(args.length>3 && !args[3].equals("0") ) pla=args[3];
@@ -91,6 +109,7 @@ class nav4{
     if(naa==con.Nmar) cons=2;
     if(naa==con.Njup) cons=4;
     if(naa==con.Nrah) cons=4;
+    if(naa==con.Nket) cons=4;
     if(naa==con.Nsat) cons=7;
     String args1=stk.nextToken();
     String args2=stk.nextToken();
@@ -1556,8 +1575,9 @@ jjj:       for(String jn:keysn){
      if(nakdesc.equals("Nmar"))  fac=con.Nmar;
      if(nakdesc.equals("Nven"))  fac=con.Nven;
      if(nakdesc.equals("Njup"))  fac=con.Njup;
-     if(nakdesc.equals("Nrah"))  fac=65.45454545F;
-     //if(nakdesc.equals("Nrah"))  fac=con.Nrah;
+     //if(nakdesc.equals("Nrah"))  fac=65.45454545F;
+     if(nakdesc.equals("Nrah"))  fac=con.Nrah;
+     if(nakdesc.equals("Nket"))  fac=con.Nket;
      if(nakdesc.equals("Nsat"))  fac=con.Nsat;
      float fdeg=0,fdeg2=0;
      float fdeg3=0,fdeg4=0;
@@ -1656,8 +1676,11 @@ public static float round(float value, int places) {
    } else if(nak.equals("Nven")){
      d1=con.Nven;  
    } else if(nak.equals("Nrah")){
-     d1=65.45454545F;  
-     //d1=con.Nrah;  
+     //d1=65.45454545F;  
+     d1=con.Nrah;  
+   } else if(nak.equals("Nket")){
+     //d1=65.45454545F;  
+     d1=con.Nket;  
    } else if(nak.equals("Njup")){
      d1=con.Njup;  
    } else if(nak.equals("Nsat")){
